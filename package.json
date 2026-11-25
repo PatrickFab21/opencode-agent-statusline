@@ -1,0 +1,11 @@
+{
+  "name": "opencode-agent-statusline",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tui": "./tui.tsx"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}
