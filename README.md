@@ -13,9 +13,19 @@ Agents: ◀ 1/2 ▶ Claude Agent | Session 5h: 23.0% | Reset: 3hr 21m | Weekly: 
 - Claude and ChatGPT/Codex quota figures are account-wide, not per-agent. For Google and other providers without a quota integration, the row shows recorded tokens and estimated cost when available, not provider-wide totals or actual charges.
 - Run `/statusline` to view the latest available quota figures. `*` marks a stale reading.
 
-## Install locally
+## Quick start
 
 Requires the OpenCode v2 terminal UI. The plugin was exercised on OpenCode 2.4.1 in Windows Terminal.
+
+Install the tagged release from GitHub using npm (no npm account required):
+
+```sh
+npm exec --yes --package=https://github.com/PatrickFab21/opencode-agent-statusline/archive/refs/tags/v0.1.0.tar.gz -- opencode-agent-statusline install
+```
+
+The installer requires Node.js 20 or newer. It copies the plugin into OpenCode's global plugin directory without editing `cli.json` or `opencode.jsonc`. Open a session and run `/reload` if OpenCode is already running. If you previously copied the plugin manually, move that copy outside the plugin directory and remove any explicit path to it from `cli.json` before installing.
+
+### Install from a checkout
 
 1. Clone or download the repository to a local directory.
 2. Add its path to the existing `plugins` array in `~/.config/opencode/cli.json`. Leave unrelated settings intact.
@@ -40,3 +50,7 @@ node --test
 ```
 
 The tests use synthetic session data and do not access your credentials or the network. Use Node.js 24 or newer.
+
+## Acknowledgments
+
+Inspired by [ccstatusline](https://github.com/sirmalloc/ccstatusline) by Matthew Breedlove ([@sirmalloc](https://github.com/sirmalloc)). Its Claude Code status line inspired this project's layout and choice of metrics. OpenCode Agent Statusline is a separate implementation for OpenCode, not a fork or an official port.

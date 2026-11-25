@@ -1,7 +1,25 @@
 {
   "name": "opencode-agent-statusline",
-  "private": true,
+  "version": "0.1.0",
+  "description": "Multi-provider model and subagent usage statusline for OpenCode v2",
   "type": "module",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatrickFab21/opencode-agent-statusline.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "opencode-agent-statusline": "./install.mjs"
+  },
+  "files": [
+    "install.mjs",
+    "tui.tsx",
+    "usage.ts",
+    "agent-providers.ts"
+  ],
   "exports": {
     "./tui": "./tui.tsx"
   },
